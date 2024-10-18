@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pain Tracker Calendar</title>
+</head>
+
+<body>
+    <div id="calendar">
+        <div class="calendar-header">
+            <button id="prev-month">◀</button>
+            <h2 id="current-month"></h2>
+            <button id="next-month">▶</button>
+        </div>
+
+    </div>
+
+    </div>
+    <div class="calendar">
+        <div class="days-header">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+        <div id="calendar-days" class="calendar-days"></div>
+    </div>
+    </div>
+
+    <!-- Modal for Questionnaire -->
+    <div id="questionnaireModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Pain Questionnaire</h2>
+            <form id="painForm">
+                <!-- Add your 5 questions here 
+                 -->
+                <fieldset>
+                    <label for = "painLocation">Location of Pain:</label>
+                        <select name="location" id="painLocation">
+                            <option value="sciatica">sciatica</option>
+                            <option value = "headache">headache</option>
+                            <option value="migraine">migraine</option>
+                            <option value = "upper back">upper back</option>
+                            <option value="lower back">lower back</option>
+                            <option value = "cramps">cramps</option>
+                            <option value = "abdomen: lower right quadrant">abdomen: lower right quadrant</option>
+                            <option value = "abdomen: lower left quadrant">abdomen: lower left quadrant</option>
+                            <option value = "chest">chest</option>
+                        </select>
+
+                    <legend id="question1">Question 1: How noticeable is the pain?</legend>
+                    <label> <input type="radio" name="intensity" value="0"> 0: I don't feel any pain </label>
+                    <label> <input type="radio" name="intensity" value="1"> 1: Barely noticeable, it doesn't bother me
+                        much </label>
+                    <label> <input type="radio" name="intensity" value="2"> 2: Slightly noticeable, but I can easily
+                        ignore it </label>
+                    <label> <input type="radio" name="intensity" value="3"> 3: Noticeable, but not too bothersome
+                    </label>
+                    <label> <input type="radio" name="intensity" value="4"> 4: Very noticeable, I feel it frequently
+                    </label>
+
+
+                    <legend id="question2">Question 2: How often do you feel the pain?</legend>
+                    <label> <input type="radio" name="frequency" value="0">
+                        0: Never </label>
+                    <label> <input type="radio" name="frequency" value="1">
+                        1: Occasionally, it comes and goes </label>
+                    <label> <input type="radio" name="frequency" value="2">
+                        2: Frequently, but manageable </label>
+                    <label> <input type="radio" name="frequency" value="3">
+                        3: Constantly when I move </label>
+                    <label> <input type="radio" name="frequency" value="4">
+                        4: Always, even when resting </label>
+
+                    <legend id="question3">Question 3: How much does the pain affect your ability to concentrate?
+                    </legend>
+                    <label> <input type="radio" name="concentration" value="0"> 0: No effect at all </label>
+                    <label> <input type="radio" name="concentration" value="1"> 1: I can focus, but it distracts me
+                        occasionally </label>
+                    <label> <input type="radio" name="concentration" value="2"> 2: I'm distracted most of the time
+                    </label>
+                    <label> <input type="radio" name="concentration" value="3"> 3: It's impossible to focus on anything
+                        but the pain </label>
+                    <label> <input type="radio" name="concentration" value="4"> 4: I can't think or function because of
+                        it </label>
+
+                    <legend id="question4">Question 4: Does the pain interfere with your daily activities?</legend>
+                    <label> <input type="radio" name="impact" value="0">
+                        0: Not at all </label>
+                    <label> <input type="radio" name="impact" value="1">
+                        1: Slightly, but I can manage </label>
+                    <label> <input type="radio" name="impact" value="2">
+                        2: I need to take breaks or adjust some activities </label>
+                    <label> <input type="radio" name="impact" value="3">
+                        3: I can’t perform some activities because of the pain </label>
+                    <label> <input type="radio" name="impact" value="4">
+                        4: I avoid most activities because of the pain </label>
+
+                    <legend id="question5">Question 5:What does your pain feel like? </legend>
+                    <label> <input type="radio" name="paintype" value="0">
+                        0: No Pain </label>
+                    <label> <input type="radio" name="paintype" value="1">
+                        1: Mild, like a dull ache </label>
+                    <label> <input type="radio" name="paintype" value="2">
+                        2: Moderate, like a sharp or throbbing pain </label>
+                    <label> <input type="radio" name="paintype" value="3">
+                        3: Severe, intense, or burning pain </label>
+                    <label> <input type="radio" name="paintype" value="4">
+                        4: Very Severe, stabbing or electric shock-like pain</label>
+
+                    <label for="notes">Additional Notes:</label>
+                    <textarea id="notes" placeholder="Additional notes..."></textarea>
+
+                </fieldset>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Clear</button>
+            </form>
+
+
+
+
+            <!-- Entries Table -->
+            <table id="entries-table">
+                <thead>
+                    <tr>
+                        <th>Entry Date</th>
+                        <th>Pain Location</th>
+                        <th>Pain Level</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="entries-body">
+                    <!-- Entries will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
