@@ -1,0 +1,103 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+#calendar div {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.calendar-container {
+    width: 300px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.calendar-header h2 {
+    margin: 0;
+}
+
+.calendar {
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.days-header, .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.days-header div, .calendar-days div {
+    text-align: center;
+    padding: 10px;
+    background-color: #ddd;
+}
+
+.calendar-days div {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px;
+    text-align: center;
+}
+.calendar-header {
+    cursor: pointer;
+}
+.dropdown {
+    margin: 10px;
+}
+
+.day {
+    position: relative; /* Necessary for tooltip positioning */
+}
+
+.day:hover::after {
+    content: attr(title); /* Display the title attribute as a tooltip */
+    position: absolute;
+    bottom: 100%; /* Position above the day */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    white-space: nowrap; /* Prevent text wrapping */
+    z-index: 10;
+}
+
+.day.disabled {
+    color: grey; /* Change text color */
+    pointer-events: none; /* Disable click events */
+    opacity: 0.5; /* Make it look disabled */
+}
