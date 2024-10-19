@@ -12,7 +12,7 @@ import { insertEntry } from '../database/initDb.js';
 // Middleware
 // Allow all methods from the same origin (you can restrict it if needed)
 app.use(cors({
-    origin: 'http://127.0.0.1:5500',
+    // origin: 'http://127.0.0.1:5500',
     methods: ['GET', 'POST', 'DELETE', 'OPTIONS'], // Explicitly allow POST
     credentials: true
 }));

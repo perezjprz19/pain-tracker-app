@@ -41,20 +41,19 @@
             <form id="painForm">
                 <!-- Add your 5 questions here 
                  -->
+                <label for="painLocation">Location of Pain:</label> <select name="location" id="painLocation">
+                    <option value="">Select pain location</option>
+                    <option value="sciatica">sciatica</option>
+                    <option value="headache">headache</option>
+                    <option value="migraine">migraine</option>
+                    <option value="upper back">upper back</option>
+                    <option value="lower back">lower back</option>
+                    <option value="cramps">cramps</option>
+                    <option value="abdomen: lower right quadrant">abdomen: lower right quadrant</option>
+                    <option value="abdomen: lower left quadrant">abdomen: lower left quadrant</option>
+                    <option value="chest">chest</option>
+                </select><br>
                 <fieldset>
-                    <label for = "painLocation">Location of Pain:</label>
-                        <select name="location" id="painLocation">
-                            <option value="sciatica">sciatica</option>
-                            <option value = "headache">headache</option>
-                            <option value="migraine">migraine</option>
-                            <option value = "upper back">upper back</option>
-                            <option value="lower back">lower back</option>
-                            <option value = "cramps">cramps</option>
-                            <option value = "abdomen: lower right quadrant">abdomen: lower right quadrant</option>
-                            <option value = "abdomen: lower left quadrant">abdomen: lower left quadrant</option>
-                            <option value = "chest">chest</option>
-                        </select>
-
                     <legend id="question1">Question 1: How noticeable is the pain?</legend>
                     <label> <input type="radio" name="intensity" value="0"> 0: I don't feel any pain </label>
                     <label> <input type="radio" name="intensity" value="1"> 1: Barely noticeable, it doesn't bother me
@@ -65,8 +64,8 @@
                     </label>
                     <label> <input type="radio" name="intensity" value="4"> 4: Very noticeable, I feel it frequently
                     </label>
-
-
+                    <br>
+                    <br>
                     <legend id="question2">Question 2: How often do you feel the pain?</legend>
                     <label> <input type="radio" name="frequency" value="0">
                         0: Never </label>
@@ -78,7 +77,8 @@
                         3: Constantly when I move </label>
                     <label> <input type="radio" name="frequency" value="4">
                         4: Always, even when resting </label>
-
+                    <br>
+                    <br>
                     <legend id="question3">Question 3: How much does the pain affect your ability to concentrate?
                     </legend>
                     <label> <input type="radio" name="concentration" value="0"> 0: No effect at all </label>
@@ -90,7 +90,8 @@
                         but the pain </label>
                     <label> <input type="radio" name="concentration" value="4"> 4: I can't think or function because of
                         it </label>
-
+                    <br>
+                    <br>
                     <legend id="question4">Question 4: Does the pain interfere with your daily activities?</legend>
                     <label> <input type="radio" name="impact" value="0">
                         0: Not at all </label>
@@ -102,7 +103,8 @@
                         3: I can’t perform some activities because of the pain </label>
                     <label> <input type="radio" name="impact" value="4">
                         4: I avoid most activities because of the pain </label>
-
+                    <br>
+                    <br>
                     <legend id="question5">Question 5:What does your pain feel like? </legend>
                     <label> <input type="radio" name="paintype" value="0">
                         0: No Pain </label>
@@ -114,7 +116,8 @@
                         3: Severe, intense, or burning pain </label>
                     <label> <input type="radio" name="paintype" value="4">
                         4: Very Severe, stabbing or electric shock-like pain</label>
-
+                    <br>
+                    <br>
                     <label for="notes">Additional Notes:</label>
                     <textarea id="notes" placeholder="Additional notes..."></textarea>
 

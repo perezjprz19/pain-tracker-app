@@ -77,7 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 const painTypeInt = Number(painType); // Convert to number
                 if (painTypeInt in painTypeIcon) { // Check if it's a valid pain type
                     painTypeIconMap[formattedTrimmedDate] = painTypeInt; // Store the integer
-                    console.log(`Mapped Date: ${formattedTrimmedDate}, Pain Type: ${painTypeInt}`);
                 } else {
                     console.log(`Invalid pain type value: ${painType} for date: ${formattedTrimmedDate}`);
                 }
@@ -104,10 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const highestPainLevel = painLevelMap[formattedDate];
             const painTypeIconForDate = painTypeIconMap[formattedDate];
 
-            // Debugging
-            console.log(`Formatted Date: ${formattedDate}`);
-            console.log(`Pain Type Icon For Date: ${painTypeIconForDate}`);
-
+           
             if (highestPainLevel !== undefined) {
                 const painLevelText = document.createElement('span');
                 painLevelText.textContent = highestPainLevel.toFixed(1);
@@ -167,7 +163,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     // Parse answers from JSON
                     const answers = JSON.parse(data[0].answers);
-                    console.log('Answers:', answers); // Log answers for debugging
+                 
 
                     // Set the pain location field
                     document.getElementById('painLocation').value = data[0].pain_location || '';
@@ -187,14 +183,20 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(`http://127.0.0.1:3000/api/getEntries?date=${selectedDate}`);
             if (!response.ok) throw new Error('Network response was not ok');
+           
             const entries = await response.json();
+           
             const entriesBody = document.getElementById('entries-body');
             entriesBody.innerHTML = '';
 
             // Clear the form fields before populating new entries
 
+            const painLocationDropdown = document.getElementById('painLocation');
+            painLocationDropdown.selectedIndex = 0;
+
             document.getElementById('notes').value = '';
-            document.getElementById('painLocation').value = '';
+
+
             document.querySelectorAll('input[type="radio"]:checked').forEach((radio) => {
                 radio.checked = false; // Uncheck radio buttons
             });

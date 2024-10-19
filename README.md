@@ -19,3 +19,19 @@ A simple web app for tracking daily pain levels and symptoms through a calendar 
 1. Clone the repository:
    ```bash
    git clone https://github.com/perezjprz19/pain-tracker-app.git
+
+2. Navigate to the project directory:
+   cd pain-tracker-app
+
+3. Install dependencies:
+   npm install
+
+4. Navigate to the `server` directory:
+   ```bash
+   cd path/to/your/project/server
+   npm start
+
+ 5.  Open your web browser and navigate to http://localhost:3000 to use the app.
+
+ 
+
